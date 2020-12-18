@@ -23,12 +23,12 @@ else
     touch "$LOCK"
     echo "-> Making patch: Cleaning and removing folders that are used to make GSI to avoid problems"
     if [ -d "$PROJECT_DIR/working/system/" ]; then
-        sudo umount "$PROJECT_DIR/working/system/"
+        umount "$PROJECT_DIR/working/system/"
     fi
     if [ -d "$PROJECT_DIR/tools/ROM_resigner/tmp/" ]; then
-        sudo rm -rf "$PROJECT_DIR/tools/ROM_resigner/tmp/"
+        rm -rf "$PROJECT_DIR/tools/ROM_resigner/tmp/"
     fi
-    sudo rm -rf "$PROJECT_DIR/cache/" "$PROJECT_DIR/tmp/" "$PROJECT_DIR/working/"
+    rm -rf "$PROJECT_DIR/cache/" "$PROJECT_DIR/tmp/" "$PROJECT_DIR/working/"
 fi
 
 usage()
@@ -93,7 +93,7 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 if [[ ! -n $2 ]]; then
     echo "-> ERROR!"
     echo " - Enter all needed parameters"
-    sudo rm -rf "$PROJECT_DIR/cache/" "$LOCK"
+    rm -rf "$PROJECT_DIR/cache/" "$LOCK"
     usage
     exit
 fi
@@ -123,7 +123,7 @@ MOUNT()
 {
     mkdir -p "$PROJECT_DIR/working/system"
     if [ $(uname) == Linux ]; then
-        sudo mount -o ro "$1" "$PROJECT_DIR/working/system"
+        mount -o ro "$1" "$PROJECT_DIR/working/system"
     elif [ $(uname) == Darwin ]; then
         fuse-ext2 "$1" "$PROJECT_DIR/working/system"
     fi
@@ -131,7 +131,7 @@ MOUNT()
 
 UMOUNT()
 {
-    sudo umount "$1"
+    umount "$1"
 }
 
 LEAVE()
@@ -177,7 +177,7 @@ if [ $AB == true ]; then
 fi
 
 if [ -d "$PROJECT_DIR/tools/ROM_resigner/tmp/" ]; then
-   sudo rm -rf "$PROJECT_DIR/tools/ROM_resigner/tmp/"
+   rm -rf "$PROJECT_DIR/tools/ROM_resigner/tmp/"
 fi
 
 if [ $AONLY == true ]; then
