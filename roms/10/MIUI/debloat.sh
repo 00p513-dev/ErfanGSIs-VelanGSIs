@@ -3,6 +3,22 @@
 systempath=$1
 thispath=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
 
+rm -rf $1/app/MiuiScreenRecorder
+rm -rf $1/priv-app/MiRecycle
+rm -rf $1/priv-app/MiWebView
+rm -rf $1/data-app/*
+rm -rf $1/priv-app/CleanMaster
+rm -rf $1/app/BookmarkProvider
+rm -rf $1/app/BuiltInPrintService
+rm -rf $1/app/KSICibaEngine
+rm -rf $1/app/MiuiCamera
+rm -rf $1/app/MiLinkService
+rm -rf $1/app/MiuiDaemon
+rm -rf $1/app/PrintSpooler
+rm -rf $1/app/SoterService
+rm -rf $1/data-app/Notes
+rm -rf $1/priv-app/BackupAndRestore
+rm -rf $1/product/app/Chrome
 rm -rf $1/app/cit
 rm -rf $1/app/MiuiCompass
 rm -rf $1/app/MiuiVideoGlobal
@@ -57,7 +73,6 @@ rm -rf $1/data-app/XMPass
 rm -rf $1/data-app/SmartTravel
 rm -rf $1/data-app/MiDrive
 rm -rf $1/data-app/com.eg.android.AlipayGphone
-rm -rf $1/app/AnalyticsCore
 rm -rf $1/app/BasicDreams
 rm -rf $1/app/BugReport
 rm -rf $1/app/Drive
@@ -66,7 +81,6 @@ rm -rf $1/app/Gmail2
 rm -rf $1/app/HybridAccessory
 rm -rf $1/app/HybridPlatform
 rm -rf $1/app/InMipay
-rm -rf $1/app/MSA-Global
 rm -rf $1/app/Maps
 rm -rf $1/app/MiPicks
 rm -rf $1/app/MiuiAudioMonitor
